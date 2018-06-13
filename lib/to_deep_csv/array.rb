@@ -1,3 +1,5 @@
+require "csv"
+
 class Array
   # to_csv for Array<Array>, Array<Hash>, Array<ActiveRecord::Base>, ActiveRecord::Relation etc.
   #
