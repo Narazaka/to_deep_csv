@@ -1,6 +1,6 @@
 # to_deep_csv
 
-to_csv for Array<Array>, Array<Hash>, Array<ActiveRecord::Base>, ActiveRecord::Relation etc.
+to_csv for `Array<Array>`, `Array<Hash>`, `Array<ActiveRecord::Base>`, `ActiveRecord::Relation` etc.
 
 ## Installation
 
