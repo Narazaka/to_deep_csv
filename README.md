@@ -1,8 +1,6 @@
-# ToDeepCsv
+# to_deep_csv
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/to_deep_csv`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+to_csv for Array<Array>, Array<Hash>, Array<ActiveRecord::Base>, ActiveRecord::Relation etc.
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require "to_deep_csv"
+
+[{a: 1, b: 2}].to_deep_csv(headers: true)
+[[1, 2]].to_deep_csv
+[[1, 2]].to_deep_csv(headers: true, columns: [:a, :b])
+{:a => 1}.to_a.to_deep_csv
+
+# for ActiveRecord
+Foo.all.to_deep_csv(headers: true)
+Foo.all.to_deep_csv(columns: [:id, :name])
+Foo.all.select(:id, :name).to_deep_csv
+Foo.all.group(:type).count.to_a.to_deep_csv(headers: true, columns: [:type, :count])
+```
 
 ## Development
 
@@ -32,4 +43,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/to_deep_csv.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Narazaka/to_deep_csv.
+
+## License
+
+This is released under The [Zlib License](https://narazaka.net/license/Zlib?2018)
