@@ -6,12 +6,12 @@ require "to_deep_csv/version"
 Gem::Specification.new do |spec|
   spec.name          = "to_deep_csv"
   spec.version       = ToDeepCsv::VERSION
+  spec.licenses      = ["Zlib"]
   spec.authors       = ["Narazaka"]
   spec.email         = ["info@narazaka.net"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "to_csv for Array<Array>, Array<Hash>, Array<ActiveRecord::Base>"
+  spec.homepage      = "https://github.com/Narazaka/to_deep_csv"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
