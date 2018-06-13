@@ -1,4 +1,5 @@
 require "csv"
+require "active_support/core_ext/object/try"
 
 class Array
   # to_csv for Array<Array>, Array<Hash>, Array<ActiveRecord::Base>, ActiveRecord::Relation etc.
