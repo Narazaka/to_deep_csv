@@ -1,10 +1,21 @@
-inherit_gem:
-  onkcop:
-    - "config/rubocop.yml"
-    # uncomment if use rails cops
-    # - "config/rails.yml"
-    # uncomment if use rspec cops
-    # - "config/rspec.yml"
-
-AllCops:
-  TargetRubyVersion: 2.5
+inherit_from:
+  - .rubocop_airbnb.yml
+# prettier
+Style/PercentLiteralDelimiters:
+  Description: Use `%`-literal delimiters consistently
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#percent-literal-braces
+  Enabled: false
+  PreferredDelimiters:
+    ! '%': ()
+    ! '%i': ()
+    ! '%q': ()
+    ! '%Q': ()
+    ! '%r': ! '{}'
+    ! '%s': ()
+    ! '%w': ()
+    ! '%W': ()
+    ! '%x': ()
+Airbnb/SimpleModifierConditional:
+  Enabled: false
+Airbnb/OptArgParameters:
+  Enabled: false

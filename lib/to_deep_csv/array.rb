@@ -18,18 +18,20 @@ class Array
   #   Foo.all.group(:type).count.to_a.to_deep_csv(headers: true, columns: [:type, :count])
   def to_deep_csv(options = {})
     # true if Hash like
-    columns_by_first = self.first.try(:attributes).try(:keys) || self.first.try(:keys)
+    columns_by_first = first.try(:attributes).try(:keys) || first.try(:keys)
     columns = options.delete(:columns) || columns_by_first
     CSV.generate("", options) do |csv|
       csv << columns if columns && options[:headers]
-      self.each do |record|
-        csv << if columns_by_first # Hash like
-                 columns.map do |column|
-                   Array(column).reduce(record) {|target, key| target.try(key) || target[key] }
-                 end
-               else # Array like
-                 record
-               end
+      each do |record|
+        csv <<
+          if columns_by_first # Hash like
+            columns.map do |column|
+              Array(column).reduce(record) { |target, key| target.try(key) || target[key] }
+            end
+          else
+            # Array like
+            record
+          end
       end
     end
   end
