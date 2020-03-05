@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rubocop-airbnb"
   spec.add_development_dependency "prettier"
   spec.add_development_dependency "simplecov"
+  spec.add_development_dependency "minitest-power_assert"
   spec.add_development_dependency "yard", "~> 0.9"
   spec.add_development_dependency "rake", "~> 13.0"
 end
