@@ -47,4 +47,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Naraza
 
 ## License
 
-This is released under The [Zlib License](https://narazaka.net/license/Zlib?2018)
+This is released under The [Zlib License](LICENSE)
